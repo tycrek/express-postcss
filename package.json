@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cd test && node test.js",
+    "release": "np"
   },
   "repository": "github:tycrek/express-postcss",
   "keywords": [
