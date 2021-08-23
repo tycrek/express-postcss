@@ -1,0 +1,26 @@
+{
+  "name": "@tycrek/express-tailwind-jit",
+  "version": "0.0.0",
+  "description": "Express.js middleware for compiling TailwindCSS in Just-in-Time mode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "github:tycrek/express-tailwind-jit",
+  "keywords": [
+    "express",
+    "middleware",
+    "tailwind",
+    "tailwindcss",
+    "css",
+    "jit"
+  ],
+  "author": "tycrek <t@tycrek.com> (https://tycrek.com/)",
+  "license": "ISC",
+  "bugs": "https://github.com/tycrek/express-tailwind-jit/issues",
+  "homepage": "https://github.com/tycrek/express-tailwind-jit#readme",
+  "funding": {
+    "type": "patreon",
+    "url": "https://patreon.com/tycrek"
+  }
+}
