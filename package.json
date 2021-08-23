@@ -4,7 +4,7 @@
   "description": "Express.js middleware for on-demand PostCSS compiling",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd test && node test.js",
   },
   "repository": "github:tycrek/express-postcss",
   "keywords": [
@@ -25,5 +25,12 @@
   "dependencies": {
     "fs-extra": "^10.0.0",
     "postcss": "^8.3.6"
+  },
+  "devDependencies": {
+    "cssnano": "^5.0.8",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "pug": "^3.0.2",
+    "tailwindcss": "^2.2.7"
   }
 }
