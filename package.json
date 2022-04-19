@@ -1,6 +1,6 @@
 {
   "name": "@tycrek/express-postcss",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Express.js middleware for on-demand PostCSS compiling",
   "main": "./dist/index.js",
   "type": "commonjs",
