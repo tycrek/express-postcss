@@ -6,6 +6,7 @@
   "scripts": {
     "test": "cd test && node test.js",
     "build": "tsc",
+    "prerelease": "npm run build && npm run test",
     "release": "np"
   },
   "repository": "github:tycrek/express-postcss",
