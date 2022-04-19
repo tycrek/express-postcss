@@ -1,16 +1,16 @@
 {
-	"extends": "@tsconfig/node14/tsconfig.json",
+	"extends": "@tsconfig/node16/tsconfig.json",
 	"compilerOptions": {
 		"outDir": "./dist",
+		"target": "ES2021",
 		"lib": [
-			"ES2020",
-			"DOM"
+			"ES2021",
 		],
-		"allowJs": true,
+		"declaration": true,
+		"declarationDir": "./dist",
 		"downlevelIteration": true
 	},
 	"include": [
-		"src/**/*.js",
 		"src/**/*.ts"
 	]
 }
