@@ -9,7 +9,8 @@
 		],
 		"declaration": true,
 		"declarationDir": "./dist",
-		"downlevelIteration": true
+		"downlevelIteration": true,
+		"strictPropertyInitialization": false
 	},
 	"include": [
 		"src/**/*.ts"

@@ -2,11 +2,15 @@
   "name": "@tycrek/express-postcss",
   "version": "0.2.3",
   "description": "Express.js middleware for on-demand PostCSS compiling",
-  "main": "./dist/index.js",
+  "main": "./dist/epcss.js",
   "type": "commonjs",
+  "engines": {
+    "node": ">=16.14.x",
+    "npm": ">=8.3.x"
+  },
   "scripts": {
     "test": "cd test && node test.js",
-    "build": "tsc",
+    "build": "rm -dr ./dist/ & tsc",
     "prerelease": "npm run build && npm run test",
     "release": "np"
   },

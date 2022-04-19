@@ -1,9 +1,8 @@
 const fetch = require('node-fetch');
 const express = require('express');
 const cssnano = require('cssnano');
-const { epcss } = require('../dist/index');
+const { epcss } = require('../')
 const path = require('path');
-
 
 // Set up Express app for tests
 const app = express();
