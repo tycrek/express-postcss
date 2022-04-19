@@ -2,7 +2,7 @@
   "name": "@tycrek/express-postcss",
   "version": "0.2.0",
   "description": "Express.js middleware for on-demand PostCSS compiling",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "cd test && node test.js",
     "build": "tsc",
