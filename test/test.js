@@ -1,23 +1,22 @@
 const fetch = require('node-fetch');
 const express = require('express');
 const cssnano = require('cssnano');
-const epcss = require('../index');
+const { epcss } = require('../dist/index');
+const path = require('path');
+
 
 // Set up Express app for tests
 const app = express();
 
 // Set view engine
 app.set('view engine', 'pug');
-app.set('views', './views/');
+app.set('views', path.join(process.cwd(), 'views/'));
 
 // CSS
-const cssPath = './tailwind-test.css';
+const cssPath = path.join(process.cwd(), 'tailwind-test.css');
 const tailwindcss = require('tailwindcss')({
 	mode: 'jit',
-	purge: {
-		enabled: false,
-		content: ['./views/**/*.pug']
-	}
+	content: ['./views/**/*.pug']
 });
 const plugins = [
 	tailwindcss,
@@ -43,6 +42,7 @@ app.listen(PORT, () => {
 	setTimeout(() =>
 		fetch(`http://127.0.0.1:${PORT}/css`)
 			.then((res) => res.text())
-			.then((_css) => setTimeout(() => process.exit(0), TIMEOUT))
+			.then((css) => console.log(`Success! Generated CSS length is ${css.length} bytes`))
+			.then(() => setTimeout(() => process.exit(0), TIMEOUT))
 		, TIMEOUT);
 });

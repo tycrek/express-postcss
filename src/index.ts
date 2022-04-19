@@ -13,7 +13,7 @@ export interface Options {
 	/**
 	 * PostCSS plugins to be used.
 	 */
-	plugins: AcceptedPlugin[];
+	plugins?: AcceptedPlugin[];
 
 	/**
 	 * A function that will be called with warnings from PostCSS. Useful for debugging.
@@ -21,13 +21,14 @@ export interface Options {
 	warn: (warning: any) => void;
 }
 
-export default function (options: Options): (req: Request, res: Response, next: NextFunction) => void {
-	return function (req: Request, res: Response, next: NextFunction) {
+/**
+ * Express.js Middleware that processes a CSS file with PostCSS.
+ */
+export function epcss(options: Options): (req: Request, res: Response, next: NextFunction) => Promise<void | Response<any, Record<string, any>>> {
+	return (req: Request, res: Response, next: NextFunction) =>
 		fs.readFile(options.cssPath)
 			.then((bytes) => postcss(options.plugins).process(bytes, { from: options.cssPath, to: options.cssPath }))
 			.then((result) => (result.warnings().forEach((warn) => (options.warn)(warn)), result.css))
 			.then((css) => res.type('css').send(css))
-			.catch(next);
-		next()
-	}
+			.catch(next)
 }
