@@ -1,6 +1,6 @@
 import { AcceptedPlugin } from 'postcss';
 
-export default class Options {
+export default interface Options {
 
 	/**
 	 * Path to the CSS file to be processed.
