@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"outDir": "./dist",
 		"module": "commonjs",
+		"moduleResolution": "Node",
 		"target": "ES2021",
 		"lib": [
 			"ES2021",
